@@ -1,0 +1,53 @@
+.page-home{
+  background-image: url("../../assets/images/home/fundo2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  padding: 10px;
+  #stack{
+    height: 100%;
+    position: relative;
+    #map{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+  }
+}
+/*
+=====================================================
+Medium devices (desktops, 768px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@include media-breakpoint-up(md) {
+}
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@include media-breakpoint-up(lg) {
+
+}
+/*
+=====================================================
+Extra Large devices (desktops, 1200px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@include media-breakpoint-up(xl) {
+
+}
+/*
+=====================================================
+Extra Extra Large devices (desktops, 1400px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@include media-breakpoint-up(xxl) {
+  
+}
