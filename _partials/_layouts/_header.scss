@@ -1,51 +1,247 @@
 header {
-  width: 100%;
   position: absolute;
+  display: flex;
+  flex-grow: 1;
   top: 0;
   left: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  
-  .circulo {
-    position: relative;
-    top: 0px;
-    left: 0px;
+  width: 100%;
 
-    padding: 25px 0rem 25px 25px;
-    width: 250px;
-    z-index: 2;
-    background-image: url("../images/home/circulo-azul.png");
-    background-position: 100% 100%;
-    background-repeat: no-repeat;
-    background-size: 300px;
-    color: $white;
-    h1 {
-      font-weight: bold;
-      margin-bottom: 0px;
+  .logo {
+    z-index: 90;
+    display: inline-block;
+
+    img {
+      position: absolute;
+      top: -7rem;
+      left: -3rem;
+      height: 15.5rem;
     }
-    p{
-      margin-top: 0px;
-      font-size: 1.2rem;
+
+    .texto {
+      position: relative;
+      top: -2.5rem;
+      left: 10px;
+
+      color: $color-white;
+      font-family: $font-default;
+
+      h2 {
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+      }
+      p {
+        font-size: 0.9rem;
+        margin: 0;
+        padding: 0;
+      }
     }
-    &.branco {
-      //TODO: criar circulo branco para as paginas sobre e contato
+
+    .aedas-logo-mock {
+      position: relative;
+      top: 5.8rem;
+      left: 10px;
+      z-index: 91;
+      padding: 1.7rem;
+      background-color: $color-white;
+      border-radius: 100%;
+      width: fit-content;
     }
   }
-  
-  #float-menu{
-    top: 20px;
-    right: 20px;
-    position: absolute;
-    z-index: 2;
 
-    background-color: $white;
-    padding: 1.5rem;
-    border-radius: 100%;
-    img{
-      height: 1.5rem;
-      width: 1.5rem;
-      object-fit: cover;
+  nav {
+    flex: 1;
+    width: auto;
+
+    .hamb {
+      padding: 1rem;
+      background-color: $color-white;
+      border-radius: 100%;
+      z-index: 99;
+      top: 10px;
+      right: 10px;
+      position: fixed;
+
+      span {
+        display: block;
+        width: 24px;
+        height: 3px;
+
+        background-color: $color-primary;
+        margin-bottom: 3px;
+
+        transition: 0.5s ease-in-out;
+        transform-origin: center;
+      }
+      &.active {
+        span {
+          background-color: $color-black;
+        }
+        span:nth-child(1) {
+          transform: translate(0px, 9px) rotate(-45deg);
+        }
+        span:nth-child(2),
+        span:nth-child(3) {
+          transform: translate(20px, 0px);
+          opacity: 0;
+        }
+        span:nth-child(4) {
+          transform: translate(0px, -9px) rotate(45deg);
+        }
+      }
+    }
+
+    .menu {
+      position: fixed;
+      top: 0;
+      left: 100%;
+      z-index: 98;
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      background-color: $color-white;
+      transition: 0.6s ease-in-out transform;
+      &.active{
+        transform: translateX(-100%);
+      }
+      .itens {
+        margin-top: 15vh;
+        margin-left: calc(1rem + 10px);
+        display: flex;
+        flex-direction: column;
+
+        &.paginas{
+          margin-top: 0;
+        }
+        form {
+          display: flex;
+          flex-direction: row;
+          padding: 1rem 0.5rem;
+          border: 2px solid $primary;
+          border-radius: 3rem;
+          width: 80%;
+          margin-bottom: 2.5rem;
+          input,
+          button {
+            background-color: $color-white;
+            outline: none;
+            border: none;
+          }
+        }
+
+        a {
+          padding-bottom: 0.5rem;
+          color: $color-black;
+          text-decoration: none;
+
+          border-bottom: 3px solid $color-black;
+          width: 80%;
+          margin-bottom: 1rem;
+
+          img {
+            height: auto;
+            width: 1rem;
+            margin-right: 0.5rem;
+          }
+
+          .seta{
+            margin-left: 0.5rem;
+          }
+        }
+      }
+      .grafismos{
+        position: absolute;
+        bottom: -150px;
+        right: -150px;
+        height: 450px;
+        transform: scaleX(-1);
+      }
+    }
+  }
+}
+/*
+=====================================================
+Medium devices (desktops, 768px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@include media-breakpoint-up(md) {
+  header{
+    .logo {
+      img{
+        height: 20rem;
+        top: -8rem;
+        left: -5rem;
+      }
+      .texto{
+        h2{
+          font-size: 2rem;
+        }
+        p{
+          font-size: 1.2rem;
+        }
+      }
+      .aedas-logo-mock{
+        top: 9rem;
+        padding: 2rem;
+      }
+    }
+  }
+}
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@include media-breakpoint-up(lg) {
+  header {
+    nav{
+      margin-top: 10px;
+      margin-left: 10%;
+      margin-right: 10px;
+      display: flex;
+      flex-direction: row;
+      .hamb{
+        display: none;
+      }
+
+      .menu{
+        position: static;
+        width: 100%;
+        height: min-content;
+        background-color: transparent;
+        .itens{
+          margin: 0;
+          flex-direction: row;
+          height: min-content;
+          align-items: center;
+          .form-wrapper{
+            padding: 5px 2.5rem;
+            margin-right: 2rem;
+            background-color: $color-white;
+            form{
+              width: fit-content;
+              margin: 0;
+              background-color: $color-white;
+            }
+          }
+          a{
+            background-color: $color-white;
+            width: auto;
+            margin: 0;
+            padding: 1.5rem;
+            border-bottom: none;
+          }
+          &.paginas{
+            display: none;
+          }
+        }
+        .grafismos{
+          display: none;
+        }
+      }
     }
   }
 }
