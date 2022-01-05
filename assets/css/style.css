@@ -11222,7 +11222,7 @@ header nav .hamb.active span:nth-child(3) {
 header nav .hamb.active span:nth-child(4) {
   transform: translate(0px, -9px) rotate(45deg);
 }
-header nav .menu {
+header nav .menu-mobile {
   position: fixed;
   top: 0;
   left: 100%;
@@ -11234,19 +11234,16 @@ header nav .menu {
   background-color: #E2E2E2;
   transition: 0.6s ease-in-out transform;
 }
-header nav .menu.active {
+header nav .menu-mobile.active {
   transform: translateX(-100%);
 }
-header nav .menu .itens {
+header nav .menu-mobile .itens {
   margin-top: 15vh;
   margin-left: calc(1rem + 10px);
   display: flex;
   flex-direction: column;
 }
-header nav .menu .itens.paginas {
-  margin-top: 0;
-}
-header nav .menu .itens form {
+header nav .menu-mobile .itens form {
   display: flex;
   flex-direction: row;
   padding: 1rem 0.5rem;
@@ -11255,13 +11252,13 @@ header nav .menu .itens form {
   width: 80%;
   margin-bottom: 2.5rem;
 }
-header nav .menu .itens form input,
-header nav .menu .itens form button {
+header nav .menu-mobile .itens form input,
+header nav .menu-mobile .itens form button {
   background-color: #E2E2E2;
   outline: none;
   border: none;
 }
-header nav .menu .itens a {
+header nav .menu-mobile .itens a {
   padding-bottom: 0.5rem;
   color: #272727;
   text-decoration: none;
@@ -11269,20 +11266,23 @@ header nav .menu .itens a {
   width: 80%;
   margin-bottom: 1rem;
 }
-header nav .menu .itens a img {
+header nav .menu-mobile .itens a img {
   height: auto;
   width: 1rem;
   margin-right: 0.5rem;
 }
-header nav .menu .itens a .seta {
+header nav .menu-mobile .itens a .seta {
   margin-left: 0.5rem;
 }
-header nav .menu .grafismos {
+header nav .menu-mobile .grafismos {
   position: absolute;
   bottom: -150px;
   right: -150px;
   height: 450px;
   transform: scaleX(-1);
+}
+header nav .menu-desktop {
+  display: none;
 }
 
 /*
@@ -11297,8 +11297,11 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
     top: -8rem;
     left: -5rem;
   }
+  header .logo .texto {
+    left: 1.5rem;
+  }
   header .logo .texto h2, header .logo .texto .h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   header .logo .texto p {
     font-size: 1.2rem;
@@ -11315,50 +11318,221 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
 =====================================================
 */
 @media (min-width: 992px) {
-  header nav {
-    margin-top: 10px;
-    margin-left: 10%;
-    margin-right: 10px;
-    display: flex;
-    flex-direction: row;
+  header nav .menu-mobile {
+    display: none;
   }
   header nav .hamb {
     display: none;
   }
-  header nav .menu {
-    position: static;
+  header nav .menu-desktop {
+    margin: 10px 10px;
     width: 100%;
-    height: min-content;
-    background-color: transparent;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 99;
   }
-  header nav .menu .itens {
-    margin: 0;
+  header nav .menu-desktop .itens {
+    display: flex;
+    justify-content: end;
+    list-style: none;
+  }
+  header nav .menu-desktop .itens li.item {
+    background-color: #E2E2E2;
+  }
+  header nav .menu-desktop .itens li.item a {
+    text-decoration: none;
+    color: #005298;
+    display: flex;
     flex-direction: row;
-    height: min-content;
+    height: 100%;
     align-items: center;
+    justify-content: center;
+    padding: 0 0.5rem;
+    transition: 0.3s;
+    transition-property: background-color;
   }
-  header nav .menu .itens .form-wrapper {
-    padding: 5px 2.5rem;
-    margin-right: 2rem;
-    background-color: #E2E2E2;
+  header nav .menu-desktop .itens li.item a svg {
+    fill: #005298;
+    width: 1.5rem;
+    height: 2rem;
+    margin: 0 0.7rem;
   }
-  header nav .menu .itens .form-wrapper form {
-    width: fit-content;
-    margin: 0;
-    background-color: #E2E2E2;
-  }
-  header nav .menu .itens a {
-    background-color: #E2E2E2;
+  header nav .menu-desktop .itens li.item a img {
+    height: 0.5rem;
     width: auto;
-    margin: 0;
-    padding: 1.5rem;
-    border-bottom: none;
   }
-  header nav .menu .itens.paginas {
-    display: none;
+  header nav .menu-desktop .itens li.item a p {
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+    font-size: 0.9rem;
+    margin-right: 0.7rem;
   }
-  header nav .menu .grafismos {
+  header nav .menu-desktop .itens li.item a .hamb-desktop {
+    margin-right: 0.7rem;
+  }
+  header nav .menu-desktop .itens li.item a .hamb-desktop span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    margin-bottom: 4px;
+    background-color: #005298;
+  }
+  header nav .menu-desktop .itens li.espacador {
+    background-color: #E2E2E2;
+    width: 3px;
+  }
+  header nav .menu-desktop .itens li.espacador span {
+    display: block;
+    width: 2px;
+    background-color: #272727;
+    height: calc(100% - 2.4rem);
+    margin: 1.2rem 0rem;
+  }
+  header nav .menu-desktop .itens li.li-form {
+    width: 25%;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  header nav .menu-desktop .itens li.li-form form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    border: 2px solid #005298;
+    border-radius: 100px;
+    height: calc(100% - 1rem);
+    background-color: #E2E2E2;
+    width: 90%;
+  }
+  header nav .menu-desktop .itens li.li-form form input {
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: #E2E2E2;
+  }
+  header nav .menu-desktop .itens li.li-form form button {
+    outline: none;
+    border: none;
+    background-color: #E2E2E2;
+    padding: 0;
+  }
+  header nav .menu-desktop .itens li.li-form:hover {
+    background-color: #E2E2E2;
+    color: #005298;
+  }
+  header nav .menu-desktop .itens li.menu-item {
+    width: 8rem;
+  }
+  header nav .menu-desktop .itens li:hover {
+    background-color: #005298;
+  }
+  header nav .menu-desktop .itens li:hover a {
+    color: #E2E2E2;
+  }
+  header nav .menu-desktop .itens li:hover a .hamb-desktop span {
+    background-color: #E2E2E2;
+  }
+  header nav .menu-desktop .itens li:hover a svg {
+    fill: #E2E2E2;
+  }
+  header nav .menu-desktop .itens li .submenu {
     display: none;
+    position: absolute;
+    list-style: none;
+    padding: 0;
+  }
+  header nav .menu-desktop .itens li .submenu li {
+    width: 8rem;
+    background-color: #005298;
+    margin-bottom: 0.3rem;
+    text-align: center;
+  }
+  header nav .menu-desktop .itens li .submenu li a {
+    display: block;
+    padding: 0.2rem 0;
+    text-decoration: none;
+    color: #E2E2E2;
+  }
+  header nav .menu-desktop .itens li .submenu li a:hover {
+    background-color: #E2E2E2;
+    color: #272727;
+  }
+  header nav .menu-desktop .itens li.menu-item:hover .submenu {
+    display: block;
+  }
+}
+/*
+=====================================================
+Extra Large devices (desktops, 1200px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@media (min-width: 1200px) {
+  header .logo img {
+    height: 30rem;
+    top: -12.5rem;
+    left: -6rem;
+  }
+  header .logo .texto {
+    top: -3.5rem;
+  }
+  header .logo .texto h2, header .logo .texto .h2 {
+    font-size: 3rem;
+  }
+  header .logo .texto p {
+    font-size: 1.5rem;
+  }
+  header .logo .aedas-logo-mock {
+    top: 12rem;
+    left: 0.2rem;
+    padding: 3rem;
+  }
+  header nav .menu-desktop .itens li:last-child a {
+    padding-right: calc(2px + 1rem);
+  }
+  header nav .menu-desktop .itens li:nth-child(2) {
+    width: 9rem;
+  }
+  header nav .menu-desktop .itens li:nth-child(2) a {
+    padding-left: calc(2px + 1rem);
+  }
+  header nav .menu-desktop .itens li:nth-child(2) .submenu li {
+    width: 9rem;
+  }
+  header nav .menu-desktop .itens li.li-form {
+    width: 20%;
+  }
+}
+/*
+=====================================================
+Extra Extra Large devices (desktops, 1400px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@media (min-width: 1400px) {
+  header nav .menu-desktop .itens li.item a {
+    padding: 0 2rem;
+  }
+  header nav .menu-desktop .itens li.item a p {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+  header nav .menu-desktop .itens li:last-child a {
+    padding-right: calc(2px + 2rem);
+  }
+  header nav .menu-desktop .itens li:nth-child(2) {
+    width: 11rem;
+  }
+  header nav .menu-desktop .itens li:nth-child(2) a {
+    padding-left: calc(2px + 2rem);
+  }
+  header nav .menu-desktop .itens li:nth-child(2) .submenu li {
+    width: 11rem;
   }
 }
 .page-home {

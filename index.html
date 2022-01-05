@@ -28,8 +28,8 @@
                     <span></span>
                     <span></span>
                 </div>
-                <div class="menu">
-                    <div class="itens principal">
+                <div class="menu-mobile">
+                    <div class="itens">
                         <div class="form-wrapper">
                             <form action="" method="get">
                                 <button class="fa fa-search" type="submit">P</button>
@@ -51,17 +51,99 @@
                             Filtros
                             <img class="seta" src="assets/images/header/seta-menu.png" alt="" srcset="">
                         </a>
-                    </div>
-                    <div class="itens paginas">
                         <a href="">Entre em contato</a>
                         <a href="">Sobre</a>
                     </div>
                     <img src="assets/images/outros/grafismos.png" class="grafismos" alt="" srcset="">
+                </div>
+                <div class="menu-desktop">
+                    <ul class="itens">
+                        <li class="item li-form">
+                            <form action="">
+                                <button class="fa fa-search" type="submit">P</button>
+                                <input type="text" name="search" id="search" placeholder="Insira aqui...">
+                            </form>
+                        </li>
+                        <li class="item menu-item">
+                            <!-- TODO: trocar icone de seta de png para svg -->
+                            <a>
+                                <span class="hamb-desktop">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                                <p>Menu</p> 
+                                <img class="seta" src="assets/images/header/seta-menu.png" alt="" srcset="">
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="/">Inicio</a></li>
+                                <li><a href="/sobre.html">Sobre</a></li>
+                                <li><a href="contato.html">Entre em contato</a></li>
+                            </ul>
+                        </li>
+                        <li class="espacador">
+                            <span></span>
+                        </li>
+                        <li class="item">
+                            <a href="">
+                                <svg width="16.25" height="25.06" viewBox="0 0 16.25 25.06" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <g>
+                                      <path d="M8.125,25.059h0a1.38,
+                                        1.38,0,0,1-1.253-.789L.805,
+                                        11.632A8.119,8.119,0,0,1,
+                                        15,3.8a8.077,8.077,0,0,1,.448,7.837L9.379,
+                                        24.27a1.38,1.38,0,0,
+                                        1-1.254.789m0-23.611a6.671,6.671,
+                                        0,0,0-6.014,9.557L8.125,
+                                        23.535l6.014-12.529A6.671,
+                                        6.671,0,0,0,8.125,1.448m.163,
+                                        11.426a3.825,3.825,0,1,1,3.826-3.825,
+                                        3.83,3.83,0,0,1-3.826,3.825m0-6.2a2.377,
+                                        2.377,0,1,0,2.377,2.377A2.38,
+                                        2.38,0,0,0,8.288,6.672"
+                                    />
+                                    </g>	
+                                </svg>
+                                
+                                <p>Escolha o <br>municipio</p>
+                            </a>
+                        </li>
+                        <li class="espacador">
+                            <span></span>
+                        </li>
+                        <li class="item">
+                            <a href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="23.555" viewBox="0 0 24 23.555">
+                                    <g>
+                                      <path d="M20.231,23.556H3.768A3.764,3.764,0,0,1,.421,18.069L8.673,2.042A3.75,3.75,0,0,1,12.019,0h0A3.749,3.749,0,0,1,15.37,2.049l8.212,16.027a3.764,3.764,0,0,1-3.35,5.481M12.019,1.347a2.379,2.379,0,0,0-2.15,1.312L1.618,18.685a2.419,2.419,0,0,0,2.151,3.526H20.231a2.419,2.419,0,0,0,2.153-3.522L14.172,2.662a2.379,2.379,0,0,0-2.15-1.316Z" transform="translate(0 -0.001)" stroke-width="0.5"/>
+                                      <rect width="1.538" height="8.131" transform="translate(11.253 6.512)" stroke-width="0.5"/>
+                                      <path d="M126.118,187.369a1.181,1.181,0,1,0,1.181-1.181,1.181,1.181,0,0,0-1.181,1.181" transform="translate(-115.277 -170.184)" stroke-width="0.5"/>
+                                    </g>	
+                                  </svg>
+                                  
+                                <p>Grau de <br>severidade</p>
+                            </a>
+                        </li>
+                        <li class="espacador">
+                            <span></span>
+                        </li>
+                        <li class="item">
+                            <a href="">
+                                <svg width="26.4" height="22.57" viewBox="0 0 26.4 22.57" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <g>
+                                      <path d="M26.666,2.055a.682.682,0,0,0-.961-.077L21.385,5.653a11.293,11.293,0,1,0,.645,1.24l4.559-3.878a.681.681,0,0,0,.078-.96M21.638,11.5a10.16,10.16,0,1,1-1.3-4.955L9.83,15.481l-4.373-4.7a.681.681,0,1,0-1,.928l4.816,5.174a.681.681,0,0,0,.94.055L20.937,7.822a10.079,10.079,0,0,1,.7,3.678"/>
+                                    </g>	
+                                </svg>
+                                
+                                Filtros
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </nav>
         </header>
     </div>
     <script src="assets/js/header.js"></script>
 </body>
-
 </html>

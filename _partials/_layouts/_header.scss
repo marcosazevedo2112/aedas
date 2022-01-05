@@ -91,7 +91,7 @@ header {
       }
     }
 
-    .menu {
+    .menu-mobile {
       position: fixed;
       top: 0;
       left: 100%;
@@ -102,7 +102,7 @@ header {
       padding: 0;
       background-color: $color-white;
       transition: 0.6s ease-in-out transform;
-      &.active{
+      &.active {
         transform: translateX(-100%);
       }
       .itens {
@@ -110,10 +110,6 @@ header {
         margin-left: calc(1rem + 10px);
         display: flex;
         flex-direction: column;
-
-        &.paginas{
-          margin-top: 0;
-        }
         form {
           display: flex;
           flex-direction: row;
@@ -145,12 +141,12 @@ header {
             margin-right: 0.5rem;
           }
 
-          .seta{
+          .seta {
             margin-left: 0.5rem;
           }
         }
       }
-      .grafismos{
+      .grafismos {
         position: absolute;
         bottom: -150px;
         right: -150px;
@@ -158,8 +154,13 @@ header {
         transform: scaleX(-1);
       }
     }
+
+    .menu-desktop {
+      display: none;
+    }
   }
 }
+
 /*
 =====================================================
 Medium devices (desktops, 768px and up)
@@ -167,28 +168,30 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
 =====================================================
 */
 @include media-breakpoint-up(md) {
-  header{
+  header {
     .logo {
-      img{
+      img {
         height: 20rem;
         top: -8rem;
         left: -5rem;
       }
-      .texto{
-        h2{
-          font-size: 2rem;
+      .texto {
+        left: 1.5rem;
+        h2 {
+          font-size: 1.8rem;
         }
-        p{
+        p {
           font-size: 1.2rem;
         }
       }
-      .aedas-logo-mock{
+      .aedas-logo-mock {
         top: 9rem;
         padding: 2rem;
       }
     }
   }
 }
+
 /*
 =====================================================
 Large devices (desktops, 992px and up)
@@ -197,49 +200,257 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
 */
 @include media-breakpoint-up(lg) {
   header {
-    nav{
-      margin-top: 10px;
-      margin-left: 10%;
-      margin-right: 10px;
-      display: flex;
-      flex-direction: row;
-      .hamb{
+    nav {
+      .menu-mobile {
         display: none;
       }
-
-      .menu{
-        position: static;
+      .hamb {
+        display: none;
+      }
+      .menu-desktop {
+        margin: 10px 10px;
         width: 100%;
-        height: min-content;
-        background-color: transparent;
-        .itens{
-          margin: 0;
-          flex-direction: row;
-          height: min-content;
-          align-items: center;
-          .form-wrapper{
-            padding: 5px 2.5rem;
-            margin-right: 2rem;
-            background-color: $color-white;
-            form{
-              width: fit-content;
-              margin: 0;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 99;
+        .itens {
+          display: flex;
+          justify-content: end;
+          list-style: none;
+          li {
+            &.item {
               background-color: $color-white;
+              a {
+                text-decoration: none;
+                color: $color-primary;
+                display: flex;
+                flex-direction: row;
+                height: 100%;
+                align-items: center;
+                justify-content: center;
+                padding: 0 0.5rem;
+                transition: 0.3s;
+                transition-property: background-color;
+                svg{
+                  fill: $color-primary;
+                  width: 1.5rem;
+                  height: 2rem;
+                  margin: 0 0.7rem;
+                }
+                img{
+                  height: 0.5rem;
+                  width: auto;
+                }
+                p {
+                  margin: 0px;
+                  padding: 0px;
+                  text-align: left;
+                  font-size: 0.9rem;
+                  margin-right: 0.7rem;
+                }
+                .hamb-desktop {
+                  margin-right: 0.7rem;
+                  span {
+                    display: block;
+                    width: 26px;
+                    height: 2px;
+                    margin-bottom: 4px;
+                    background-color: $color-primary;
+                  }
+                }
+              }
+            }
+
+            &.espacador {
+              background-color: $color-white;
+              width: 3px;
+              span {
+                display: block;
+                width: 2px;
+                background-color: $color-black;
+                height: calc(100% - 2.4rem);
+                margin: 1.2rem 0rem;
+              }
+            }
+
+            &.li-form {
+              width: 25%;
+              margin-right: 1rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              ;
+              form{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 1rem;
+                border: 2px solid $color-primary;
+                border-radius: 100px;
+                height: calc(100% - 1rem);
+                background-color: $color-white;
+                width: 90%;
+                input{
+                  width: 100%;
+                  outline: none;
+                  border: none;
+                  background-color: $color-white;
+                }
+                button{
+                  outline: none;
+                  border: none;
+                  background-color: $color-white;
+                  padding: 0;
+                }
+              }
+              &:hover{
+                background-color: $color-white;
+                color: $color-primary;
+              }
+            }
+
+            &.menu-item{
+              width: 8rem;
+            }
+
+            &:hover{
+              background-color: $color-primary;
+              a{
+                color: $color-white;
+                .hamb-desktop{
+                  span{
+                    background-color: $color-white;
+                  }
+                }
+                svg{
+                  fill: $color-white;
+                }
+              }
+            }
+
+            .submenu{
+              display: none;
+              position: absolute;
+              list-style: none;
+              padding: 0;
+              li{
+                width: 8rem;
+                background-color: $color-primary;
+                margin-bottom: 0.3rem;
+                text-align: center;
+                a{
+                  display: block;
+                  padding: 0.2rem 0;
+                  text-decoration: none;
+                  color: $color-white;
+                  &:hover{
+                    background-color: $color-white;
+                    color: $color-black;
+                  }
+                }
+              }
+            }
+
+            &.menu-item:hover .submenu{
+              display: block;
             }
           }
-          a{
-            background-color: $color-white;
-            width: auto;
-            margin: 0;
-            padding: 1.5rem;
-            border-bottom: none;
+        }
+      }
+    }
+  }
+}
+/*
+=====================================================
+Extra Large devices (desktops, 1200px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@include media-breakpoint-up(xl) {
+  header{
+    .logo{
+      img{
+        height: 30rem;
+        top: -12.5rem;
+        left: -6rem;
+      }
+      .texto{
+        top: -3.5rem;
+        h2{
+          font-size: 3rem;
+        }
+        p{
+          font-size: 1.5rem;
+        }
+      }
+      .aedas-logo-mock{
+        top: 12rem;
+        left: 0.2rem;
+        padding: 3rem;
+      }
+    }
+    nav{
+      .menu-desktop{
+        .itens{
+          li:last-child{
+            a{
+              padding-right: calc(2px + 1rem);
+            }
           }
-          &.paginas{
-            display: none;
+          li:nth-child(2){
+            width: 9rem;
+            a{
+              padding-left: calc(2px + 1rem);
+            }
+            .submenu li{
+              width: 9rem;
+            }
+          }
+          li.li-form{
+            width: 20%;
           }
         }
-        .grafismos{
-          display: none;
+      }
+    }
+  }
+}
+
+/*
+=====================================================
+Extra Extra Large devices (desktops, 1400px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@include media-breakpoint-up(xxl) {
+  header{
+    nav{
+      .menu-desktop{
+        .itens{
+          li.item{
+            a{
+              padding: 0 2rem;
+              p{
+                font-size: 18px;
+                line-height: 1.2;
+              }
+            }
+          }
+          li:last-child{
+            a{
+              padding-right: calc(2px + 2rem);
+            }
+          }
+          li:nth-child(2){
+            width: 11rem;
+            a{
+              padding-left: calc(2px + 2rem);
+            }
+            .submenu li{
+              width: 11rem;
+            }
+          }
         }
       }
     }
