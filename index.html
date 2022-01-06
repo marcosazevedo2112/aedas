@@ -29,6 +29,7 @@
                     <span></span>
                 </div>
                 <div class="menu-mobile">
+                    <img src="assets/images/outros/grafismos.png" class="grafismos" alt="" srcset="">
                     <div class="itens">
                         <div class="form-wrapper">
                             <form action="" method="get">
@@ -36,17 +37,17 @@
                                 <input type="text" name="search" id="search" placeholder="Insira aqui...">
                             </form>
                         </div>
-                        <a href="">
+                        <a class="act-municipio" href="#">
                             <img src="assets/images/header/icon-loc.png" alt="" srcset="">
                             Escolha o municipio
                             <img class="seta" src="assets/images/header/seta-menu.png" alt="" srcset="">
                         </a>
-                        <a href="">
+                        <a class="act-severidade" href="#">
                             <img src="assets/images/header/icon-severidade.png" alt="" srcset="">
                             Grau de severidade
                             <img class="seta" src="assets/images/header/seta-menu.png" alt="" srcset="">
                         </a>
-                        <a href="">
+                        <a class="act-filtro" href="#">
                             <img src="assets/images/header/icon-filtros.png" alt="" srcset="">
                             Filtros
                             <img class="seta" src="assets/images/header/seta-menu.png" alt="" srcset="">
@@ -54,14 +55,13 @@
                         <a href="">Entre em contato</a>
                         <a href="">Sobre</a>
                     </div>
-                    <img src="assets/images/outros/grafismos.png" class="grafismos" alt="" srcset="">
                 </div>
                 <div class="menu-desktop">
                     <ul class="itens">
                         <li class="item li-form">
                             <form action="">
                                 <button type="submit">
-                                    <!--FIXME: Exportar outro svg, esse aqui não funciona -->
+                                    <!--FIXME: Exportar outro svg de pesquisa, esse aqui não funciona -->
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30.523" height="30"
                                         viewBox="0 0 30.523 30">
                                         <path
@@ -76,8 +76,8 @@
                             </form>
                         </li>
                         <li class="item menu-item">
-                            <!-- TODO: trocar icone de seta de png para svg -->
-                            <a href="">
+                            <!-- TODO: trocar icone de seta de png para svg e fazer a animação de girada -->
+                            <a href="#">
                                 <span class="hamb-desktop">
                                     <span></span>
                                     <span></span>
@@ -97,7 +97,7 @@
                             <span></span>
                         </li>
                         <li class="item">
-                            <a href="">
+                            <a href="#" class="act-municipio">
                                 <svg width="16.25" height="25.06" viewBox="0 0 16.25 25.06"
                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <g>
@@ -124,7 +124,7 @@
                             <span></span>
                         </li>
                         <li class="item">
-                            <a href="">
+                            <a href="#" class="act-severidade">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                     width="24" height="23.555" viewBox="0 0 24 23.555">
                                     <g>
@@ -146,7 +146,7 @@
                             <span></span>
                         </li>
                         <li class="item">
-                            <a href="">
+                            <a href="#" class="act-filtro">
                                 <svg width="26.4" height="22.57" viewBox="0 0 26.4 22.57"
                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <g>
@@ -161,6 +161,207 @@
                     </ul>
                 </div>
             </nav>
+            <div class="severidade">
+                <div class="severidade-close act-severidade">
+                    <div class="severidade-close-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14.826" height="15.926" viewBox="0 0 14.826 15.926">
+                            <g transform="translate(-385.087 -9.087)">
+                              <line x2="12" y2="13.1" transform="translate(386.5 10.5)" fill="none" stroke="#272727" stroke-linecap="round" stroke-width="2"/>
+                              <line y1="13.1" x2="12" transform="translate(386.5 10.5)" fill="none" stroke="#272727" stroke-linecap="round" stroke-width="2"/>
+                            </g>
+                          </svg>
+                    </div>  
+                </div>
+                <p>Selecione o grau de severidade
+                    de impacto sobre o qual deseja obter
+                    informações e veja os resultados no mapa
+                </p>
+                <div class="opcoes">
+                    <div class="item">
+                        <input type="radio" id="severidade-sem-impacto" name="severidade-input" value="0">
+                        <label for="severidade-sem-impacto">Não foi Impactado</label>
+                    </div>
+                    <div class="separador"></div>
+                    <div class="item">
+                        <input type="radio" id="severidade-brando" name="severidade-input" value="1">
+                        <label for="severidade-brando">Brando</label>
+                    </div>
+                    <div class="separador"></div>
+                    <div class="item">
+                        <input type="radio" id="severidade-severo" name="severidade-input" value="2">
+                        <label for="severidade-severo">Severo</label>
+                    </div>
+                    <div class="separador"></div>
+                    <div class="item">
+                        <input type="radio" id="severidade-muito-severo" name="severidade-input" value="3">
+                        <label for="severidade-muito-severo">Muito severo</label>
+                    </div>
+                    <div class="separador"></div>
+                </div>
+                <button class="act-severidade">
+                    OK
+                </button>
+                <img src="assets/images/outros/grafismos.png" class="grafismos" alt="" srcset="">
+            </div>
+            <div class="municipio">
+                <div class="municipio-close act-municipio">
+                    <div class="municipio-close-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14.826" height="15.926" viewBox="0 0 14.826 15.926">
+                            <g transform="translate(-385.087 -9.087)">
+                              <line x2="12" y2="13.1" transform="translate(386.5 10.5)" fill="none" stroke="#272727" stroke-linecap="round" stroke-width="2"/>
+                              <line y1="13.1" x2="12" transform="translate(386.5 10.5)" fill="none" stroke="#272727" stroke-linecap="round" stroke-width="2"/>
+                            </g>
+                          </svg>
+                    </div>  
+                </div>
+                <p>
+                    Selecione o(s) municipios(s) sobre o(s)
+                    qual(is) deseja obter informações. Você
+                    pode adicionar quantos municipios quiser.
+                </p>
+                <div class="opcoes">
+                    <div class="item">
+                        <input type="checkbox" id="municipio-betim" name="municipio-input" value="0">
+                        <label for="municipio-betim">Betim</label>
+                    </div>
+                    <div class="separador"></div>
+                    <div class="item">
+                        <input type="checkbox" id="municipio-igarape" name="municipio-input" value="1">
+                        <label for="municipio-igarape">Igarapé</label>
+                    </div>
+                    <div class="separador"></div>
+                    <div class="item">
+                        <input type="checkbox" id="municipio-betim" name="municipio-input" value="2">
+                        <label for="municipio-juatuba">Betim</label>
+                    </div>
+                    <div class="separador"></div>
+                    <div class="item">
+                        <input type="checkbox" id="municipio-juatuba" name="municipio-input" value="4">
+                        <label for="municipio-juatuba">Juatuba</label>
+                    </div>
+                    <div class="separador"></div>
+                    <div class="item">
+                        <input type="checkbox" id="municipio-mcampos" name="municipio-input" value="5">
+                        <label for="municipio-mcampos">Mário Campo</label>
+                    </div>
+                    <div class="separador"></div>
+                    <div class="item">
+                        <input type="checkbox" id="municipio-mleme" name="municipio-input" value="6">
+                        <label for="municipio-mleme">Mateus Leme</label>
+                    </div>
+                    <div class="separador"></div>
+                    <div class="item">
+                        <input type="checkbox" id="municipio-sjbicas" name="municipio-input" value="7">
+                        <label for="municipio-sjbicas">São joaquim de bicas</label>
+                    </div>
+                    <div class="separador"></div>
+                </div>
+                <div class="municipio-seleciona-todos">
+                    <div class="switch-container">
+                        <label class="switch">
+                            <input name="seleciona-todos" id="seleciona-todos" type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                        <label for="seleciona-todos">Seleciona todos</label>
+                    </div>
+                </div>
+                <button class="act-municipio">
+                    OK
+                </button>
+            </div>
+            <div class="filtro">
+                <div class="filtro-close act-filtro">
+                    <div class="filtro-close-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14.826" height="15.926" viewBox="0 0 14.826 15.926">
+                            <g transform="translate(-385.087 -9.087)">
+                              <line x2="12" y2="13.1" transform="translate(386.5 10.5)" fill="none" stroke="#272727" stroke-linecap="round" stroke-width="2"/>
+                              <line y1="13.1" x2="12" transform="translate(386.5 10.5)" fill="none" stroke="#272727" stroke-linecap="round" stroke-width="2"/>
+                            </g>
+                          </svg>
+                    </div>  
+                </div>
+                <p>
+                    Selecione as informações
+                    que deseja ver exibidas no mapa.
+                    Você pode adicionar quantos filtros
+                    quiser.
+                </p>
+                <div class="filtro-seleciona-todos">
+                    <div class="switch-container">
+                        <label class="switch">
+                            <input name="filtro-seleciona-todos" id="filtro-seleciona-todos" type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                        <label for="filtro-seleciona-todos">Seleciona todos</label>
+                    </div>
+                </div>
+                <div class="op-wrapper">
+                    <span>
+                        <img src="assets/images/outros/categorias-icon.png" alt="" srcset="">
+                        <h3>CATEGORIAS</h3>
+                    </span>
+                    <div class="opcoes">
+                        <div class="separador"></div>
+                        <div class="item">
+                            <input type="checkbox" id="categoria-esporte" name="categorias-input" value="0">
+                            <label for="categoria-esporte">Esportes e lazer</label>
+                        </div>
+                        <div class="separador"></div>
+                        <div class="item">
+                            <input type="checkbox" id="categoria-turismo" name="categorias-input" value="0">
+                            <label for="categoria-turismo">Turismo</label>
+                        </div>
+                        <div class="separador"></div>
+                        <div class="item">
+                            <input type="checkbox" id="categoria-cultura" name="categorias-input" value="0">
+                            <label for="categoria-cultura">Cultura e Patrimônio</label>
+                        </div>
+                        <div class="separador"></div>
+                        <div class="item">
+                            <input type="checkbox" id="categoria-localidade" name="categorias-input" value="3">
+                            <label for="categoria-localidade">Localidades</label>
+                        </div>
+                        <div class="separador"></div>
+                        <div class="item">
+                            <input type="checkbox" id="categoria-PCTRAMA" name="categorias-input" value="4">
+                            <label for="categoria-PCTRAMA">PCTRAMA</label>
+                        </div>
+                        <div class="separador"></div>
+                    </div>
+                </div>
+                <div class="op-wrapper">
+                    <span>
+                        <img src="assets/images/outros/tempo-icon.png" alt="" srcset="">
+                        <h3>TEMPORALIDADE DE PERCEPÇÃO DOS EFEITOS</h3>
+                    </span>
+                    <div class="opcoes">
+                        <div class="separador"></div>
+                        <div class="item">
+                            <input type="checkbox" id="tempo-nsentido" name="tempo-input" value="0">
+                            <label for="tempo-nsentido">Não foi sentido</label>
+                        </div>
+                        <div class="separador"></div>
+                        <div class="item">
+                            <input type="checkbox" id="tempo-lprazo" name="tempo-input" value="1">
+                            <label for="tempo-lprazo">A longo prazo</label>
+                        </div>
+                        <div class="separador"></div>
+                        <div class="item">
+                            <input type="checkbox" id="tempo-mprazo" name="tempo-input" value="2">
+                            <label for="tempo-mprazo">A médio prazo</label>
+                        </div>
+                        <div class="separador"></div>
+                        <div class="item">
+                            <input type="checkbox" id="tempo-imediatamente" name="tempo-input" value="3">
+                            <label for="tempo-imediatamente">Imediatamente</label>
+                        </div>
+                        <div class="separador"></div>
+                    </div>
+                </div>
+                <div class="btn-wrapper act-filtro">
+                    <button>Filtrar</button>
+                </div>
+            </div>
         </header>
         <!--
             A div abaixo é um exemplo para a visuzalição das informações nos pins, 
@@ -230,7 +431,7 @@
                         </li>
                         <li class="content-espacador"></li>
                         <li class="content-li-item">
-                            <!--FIXME: trocar psn por svg-->
+                            <!--FIXME: trocar png do tempo por svg-->
                             <img src="assets/images/outros/tempo-icon.png" alt="">
                             <p>Temporalidade de percepção dos efeitos:<br>
                                 <b>Imediatamente</b>
