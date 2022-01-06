@@ -1,0 +1,219 @@
+/*
+Se não existir uma classe modificadora para a div, ela será por padrão 
+da cor laranja(Esportes). O padrão é que todo pin tenha foto, 
+mas não é obrigatorio, caso não tenha foto, deverá ser adicionado 
+a div uma classe "sem-foto"
+*/
+
+.pin-card {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  z-index: 100;
+  width: 90vw;
+  height: 100vh;
+  background-color: $color-orange;
+  color: $color-black;
+  transition: 0.5s ease-in-out transform;
+  overflow-y: scroll;
+
+  .pin-card-close {
+    position: sticky;
+    top: 1rem;
+    right: 1rem;
+    float: right;
+    padding: 0.5rem;
+    border-radius: 100%;
+    background-color: $color-orange;
+    cursor: pointer;
+  }
+
+  .pin-card-top {
+    img {
+      margin-top: -4rem;
+      width: 100%;
+      height: 50vw;
+      object-fit: cover;
+    }
+  }
+
+  .pin-card-content {
+    width: 90%;
+    height: fit-content;
+    padding-left: 2rem;
+    .content-header {
+      position: relative;
+      top: -1rem;
+      display: flex;
+      align-items: center;
+      img {
+        height: 5rem;
+        margin-right: 0.5rem;
+      }
+      h4 {
+        font-weight: 600;
+        color: $color-black;
+      }
+    }
+    .content-main {
+      h1 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-top: 1rem;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        li {
+          &.content-li-item {
+            display: flex;
+            align-items: center;
+            svg,
+            img {
+              margin-right: 1rem;
+              width: 1.5rem;
+            }
+            p {
+              margin: 0;
+              padding: 0;
+            }
+          }
+          &.content-espacador {
+            margin: 0.5rem 0;
+            height: 3px;
+            width: 100%;
+            background-color: $color-black;
+          }
+        }
+      }
+    }
+    .content-footer {
+      display: block;
+      height: fit-content;
+    }
+  }
+
+  &.active {
+    transform: translateX(-100%);
+  }
+
+  &.sem-foto {
+    .pin-card-content {
+      .content-header {
+        margin-top: 4rem;
+        align-items: center;
+      }
+    }
+  }
+
+  &.turismo {
+    background-color: $color-sky-blue;
+    .pin-card-close {
+      background-color: $color-sky-blue;
+    }
+  }
+
+  &.cultura {
+    background-color: $color-green;
+    .pin-card-close {
+      background-color: $color-green;
+    }
+  }
+
+  &.localidades {
+    background-color: $color-yellow;
+    .pin-card-close {
+      background-color: $color-yellow;
+    }
+  }
+
+  &.pctrama {
+    background-color: $color-pink;
+    .pin-card-close {
+      background-color: $color-pink;
+    }
+  }
+
+  &.esportes {
+    background-color: $color-orange;
+    .pin-card-close {
+      background-color: $color-orange;
+    }
+  }
+}
+/*
+=====================================================
+Medium devices (desktops, 768px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@include media-breakpoint-up(md) {
+  .pin-card {
+    height: 100vh;
+    overflow-y: scroll;
+    .pin-card-close {
+      padding: 1rem;
+    }
+
+    .pin-card-top {
+      img {
+        height: 30vw;
+      }
+    }
+
+    .pin-card-content {
+      .content-header {
+        img {
+          height: 5rem;
+        }
+        h4 {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@include media-breakpoint-up(lg) {
+  .pin-card {
+    width: 40%;
+    height: 100vh;
+    overflow-y: scroll;
+    .pin-card-close {
+    }
+
+    .pin-card-top {
+      img {
+        height: 30vw;
+      }
+    }
+
+    .pin-card-content {
+      padding-left: 0;
+      width: 90%;
+      margin: 0 auto;
+      .content-header {
+        img {
+          height: 5rem;
+        }
+        h4 {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    &.sem-foto {
+      .pin-card-content {
+        .content-header {
+          margin-top: 6rem;
+        }
+      }
+    }
+  }
+}
