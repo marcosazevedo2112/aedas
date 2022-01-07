@@ -13,5 +13,8 @@
   "devDependencies": {
     "bootstrap": "^5.1.3",
     "sass": "^1.45.1"
+  },
+  "dependencies": {
+    "swiper": "^7.4.1"
   }
 }

@@ -1,0 +1,52 @@
+footer{
+  padding: 10vw 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  p{
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0;
+    &.copyright{
+      font-size: 0.7rem;
+    }
+  }
+  .realizadores{
+    margin: 2rem 0;
+    text-align: center;
+    img{
+      height: 4rem;
+      mix-blend-mode: multiply;
+    }
+    width: 80%;
+  }
+}
+
+/*
+=====================================================
+Medium devices (desktops, 768px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@include media-breakpoint-up(md) {
+  footer{
+    .realizadores{
+      p{
+        text-align: left;
+      }
+    }
+  }
+}
+
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@include media-breakpoint-up(lg) {
+  footer{
+    padding: 5vw 10rem;
+  }
+}

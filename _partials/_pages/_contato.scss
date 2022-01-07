@@ -1,0 +1,132 @@
+.contato-page {
+  main {
+    .box {
+      background-image: url("../images/outros/grafismos.png");
+      background-size: 100%;
+      background-position: 60vw -35vw;
+      background-repeat: no-repeat;
+      position: relative;
+      padding: 2rem 2rem;
+      p.info {
+        font-size: 1.5rem;
+        line-height: 1.3;
+        font-weight: bold;
+      }
+      p.email {
+        color: $color-primary;
+        span {
+          font-weight: bold;
+          border-bottom: 2px solid $color-primary;
+        }
+      }
+    }
+    .perguntas {
+      width: 100%;
+      height: fit-content;
+      padding: 2rem 2rem 2rem 2rem;
+      h3 {
+        font-weight: bold;
+        margin-bottom: 2rem;
+      }
+
+      .pergunta-box {
+        margin-bottom: 3rem;
+        position: relative;
+        .pergunta {
+          cursor: pointer;
+          position: relative;
+          margin: 1rem 0;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          img {
+            width: 1rem;
+            transition: 0.3s ease-in-out transform;
+            transform-origin: top;
+          }
+          p {
+            margin: 0;
+          }
+          .divisor {
+            position: absolute;
+            bottom: -0.5rem;
+            width: 100%;
+            height: 2px;
+            background-color: $color-primary;
+          }
+        }
+        .resposta {
+          position: absolute;
+          display: block;
+          transition: 0.3s ease-in-out;
+          transform-origin: top;
+          transform: scaleY(0);
+          opacity: 0;
+        }
+        &.active {
+          .pergunta {
+            img {
+              transform: rotate(180deg);
+            }
+          }
+          .resposta {
+            position: relative;
+            transform: scaleY(1);
+            opacity: 1;
+          }
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+/*
+=====================================================
+Medium devices (desktops, 768px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@include media-breakpoint-up(md) {
+  .contato-page {
+    main {
+      .box {
+        p.info {
+          font-size: 2rem;
+        }
+        p.email {
+          font-size: 1.3rem;
+        }
+      }
+      .perguntas {
+        h3 {
+          font-size: 2rem;
+        }
+        .pergunta-box {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}
+
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@include media-breakpoint-up(lg) {
+  .contato-page {
+    main {
+      .grafismos{
+        height: 25rem;
+        transform: rotate(100deg);
+        left: -6rem;
+      }
+    }
+  }
+}

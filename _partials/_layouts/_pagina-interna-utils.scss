@@ -1,0 +1,102 @@
+.contato-page,
+.sobre-page {
+  background-color: $color-white;
+  main{
+    .grafismos {
+      position: absolute;
+      top: -3rem;
+      left: -5rem;
+      height: 20rem;
+      transform: rotate(90deg);
+      opacity: 0.5;
+    }
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12rem 0px 0px 0px;
+    .inicio {
+      padding: 0vw 2rem 2rem 2rem;
+      h1 {
+        width: 100%;
+        text-align: start;
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        font-weight: 600;
+      }
+      h4{
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+    }
+    .espacador {
+      display: block;
+      width: 100%;
+      height: 3px;
+      margin: 1rem 0;
+      background-color: $color-black;
+    }
+  }
+  .padding-padrao{
+    padding: 2rem;
+  }
+}
+/*
+=====================================================
+Medium devices (desktops, 768px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@include media-breakpoint-up(md) {
+  .contato-page,
+  .sobre-page {
+    background-color: $color-white;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 12rem 30vw 0rem 0rem;
+    }
+  }
+}
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@include media-breakpoint-up(lg) {
+  .contato-page,
+  .sobre-page {
+    background-color: $color-white;
+
+    .container {
+      padding-left: 5rem;
+      .inicio{
+        h1{
+          font-size: 6rem;
+        }
+        p{
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}
+
+/*
+=====================================================
+Extra Extra Large devices (desktops, 1400px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@include media-breakpoint-up(xxl) {
+  .contato-page, .sobre-page{
+    .container{
+      max-width: unset;
+    }
+  }
+}

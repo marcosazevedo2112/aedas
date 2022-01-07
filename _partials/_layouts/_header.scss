@@ -6,7 +6,7 @@ header {
   width: 100%;
   height: 0;
   justify-content: space-between;
-  
+
   .logo {
     z-index: 90;
     height: 90px;
@@ -48,6 +48,10 @@ header {
       background-color: $color-white;
       border-radius: 100%;
       width: fit-content;
+    }
+
+    .circulo-branco {
+      display: none;
     }
   }
   nav {
@@ -108,7 +112,7 @@ header {
       .itens {
         z-index: 99;
         margin-top: 15vh;
-        margin-left: calc(1rem + 10px);
+        margin-left: 1.5rem;
         display: flex;
         flex-direction: column;
         form {
@@ -121,9 +125,15 @@ header {
           margin-bottom: 2.5rem;
           input,
           button {
+            svg {
+              width: 1rem;
+            }
             background-color: $color-white;
             outline: none;
             border: none;
+          }
+          input {
+            width: 90%;
           }
         }
 
@@ -182,14 +192,14 @@ header {
       background-color: $color-gray;
       border-radius: 100%;
       transition: 0.3s ease-in-out background-color;
-      svg{
+      svg {
         height: 1.5rem;
         width: 1.5rem;
         transform: scale(0.5);
       }
-      &:hover{
+      &:hover {
         background-color: $color-black;
-        svg line{
+        svg line {
           stroke: $color-gray;
         }
       }
@@ -276,7 +286,7 @@ header {
     top: 0;
     left: 100%;
     z-index: 99;
-    height:100vh;
+    height: 100vh;
     width: 100vw;
     background-color: $color-gray;
     padding: 2rem;
@@ -292,14 +302,14 @@ header {
       background-color: $color-gray;
       border-radius: 100%;
       transition: 0.3s ease-in-out background-color;
-      svg{
+      svg {
         height: 1.5rem;
         width: 1.5rem;
         transform: scale(0.5);
       }
-      &:hover{
+      &:hover {
         background-color: $color-black;
-        svg line{
+        svg line {
           stroke: $color-gray;
         }
       }
@@ -519,17 +529,17 @@ header {
       background-color: $color-primary;
       border-radius: 100%;
       transition: 0.3s ease-in-out background-color;
-      svg{
+      svg {
         height: 1.5rem;
         width: 1.5rem;
         transform: scale(0.5);
-        line{
+        line {
           stroke: $color-white;
         }
       }
-      &:hover{
+      &:hover {
         background-color: $color-white;
-        svg line{
+        svg line {
           stroke: $color-primary;
         }
       }
@@ -602,7 +612,7 @@ header {
       transform: translateX(-100%);
     }
 
-    .btn-wrapper{
+    .btn-wrapper {
       position: -webkit-sticky;
       position: sticky;
       bottom: 0;
@@ -613,7 +623,7 @@ header {
         margin: 0 auto;
         padding: 0.2rem 1rem;
         width: fit-content;
-  
+
         background-color: transparent;
         border: 2px solid $color-white;
         color: $color-white;
@@ -621,12 +631,54 @@ header {
         border-radius: 4rem;
         font-size: 1.2rem;
         transition: 0.3s ease-in-out background-color;
-  
+
         &:hover {
           background-color: $color-white;
           color: $color-primary;
         }
       }
+    }
+  }
+
+  &.pag-internas {
+    .logo {
+      z-index: 94;
+      .aedas-logo-mock,
+      img {
+        display: none;
+      }
+      .circulo-branco {
+        display: block;
+        width: 12.5rem;
+        height: 12.5rem;
+        position: absolute;
+        top: -5rem;
+        left: -3rem;
+
+        background-color: $color-white;
+        border-radius: 100%;
+      }
+      .texto {
+        position: absolute;
+        top: 1rem;
+        color: $color-black;
+        h2 {
+          font-size: 1.2rem;
+        }
+        p {
+          font-size: 0.8rem;
+        }
+      }
+    }
+    nav::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background-color: $color-primary;
+      z-index: 93;
     }
   }
 }
@@ -671,6 +723,20 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
     .municipio {
       padding: 3rem;
     }
+    &.pag-internas {
+      .texto {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        color: $color-black;
+        h2 {
+          font-size: 1.8rem;
+        }
+        p {
+          font-size: 1.2rem;
+        }
+      }
+    }
   }
 }
 
@@ -690,18 +756,20 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
         display: none;
       }
       .menu-desktop {
-        margin: 10px 10px;
         width: 100%;
         display: block;
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
         z-index: 99;
+        margin: 10px 10px;
+        pointer-events: none;
         .itens {
           display: flex;
           justify-content: end;
           list-style: none;
           li {
+            pointer-events: all;
             &.item {
               background-color: $color-white;
               a {
@@ -780,6 +848,7 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
                   background-color: $color-white;
                 }
                 button {
+                  margin-right: 0.5rem;
                   outline: none;
                   border: none;
                   background-color: $color-white;
@@ -854,10 +923,96 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
         font-size: 1.5rem;
       }
     }
-    .filtro{
+    .filtro {
       width: 40%;
       p {
         font-size: 1.5rem;
+      }
+    }
+
+    &.pag-internas {
+      .logo{
+        .circulo-branco{
+          position: fixed;
+          width: 15rem;
+          height: 15rem;
+          top: -6rem;
+          left: -3rem;
+        }
+        .texto {
+          position: fixed;
+          top: 1rem;
+          left: 1rem;
+          h2 {
+            font-size: 1.5rem;
+          }
+          p {
+            font-size: 1rem;
+          }
+        }
+      }
+      nav {
+        .menu-desktop {
+          margin: 10px 0;
+          .itens {
+            li {
+              background-color: $color-gray;
+              &.item,
+              &.espacador {
+                a {
+                  color: $color-black;
+                  svg {
+                    fill: $color-black;
+                  }
+                  .hamb-desktop {
+                    span {
+                      background-color: $color-black;
+                    }
+                  }
+                  &:hover {
+                    background-color: $color-primary;
+                    color: $color-white;
+                    svg {
+                      fill: $color-white;
+                    }
+                    .hamb-desktop {
+                      span {
+                        background-color: $color-white;
+                      }
+                    }
+                  }
+                }
+              }
+              &.li-form {
+                form,
+                form input,
+                form button {
+                  background-color: $color-gray;
+                  border-color: $color-black;
+                  svg path,
+                  svg rect {
+                    fill: $color-black;
+                  }
+                }
+                &:hover{
+                  background-color: $color-gray;
+                }
+              }
+              .submenu {
+                li a {
+                  color: $color-white;
+                  &:hover {
+                    background-color: $color-gray;
+                    color: $color-black;
+                  }
+                }
+              }
+            }
+          }
+        }
+        &::before{
+          position: fixed;
+        }
       }
     }
   }
@@ -931,7 +1086,7 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
         .itens {
           li.item {
             a {
-              padding: 0 2rem;
+              padding: 1.2rem 2rem;
               p {
                 font-size: 18px;
                 line-height: 1.2;

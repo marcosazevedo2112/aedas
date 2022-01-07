@@ -68,8 +68,8 @@ a div uma classe "sem-foto"
           &.content-li-item {
             display: flex;
             align-items: center;
-            svg,
-            img {
+            svg{
+              fill: $color-black;
               margin-right: 1rem;
               width: 1.5rem;
             }

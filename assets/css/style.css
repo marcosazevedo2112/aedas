@@ -11188,6 +11188,9 @@ header .logo .aedas-logo-mock {
   border-radius: 100%;
   width: fit-content;
 }
+header .logo .circulo-branco {
+  display: none;
+}
 header nav {
   width: 56px;
   height: 56px;
@@ -11242,7 +11245,7 @@ header nav .menu-mobile.active {
 header nav .menu-mobile .itens {
   z-index: 99;
   margin-top: 15vh;
-  margin-left: calc(1rem + 10px);
+  margin-left: 1.5rem;
   display: flex;
   flex-direction: column;
 }
@@ -11260,6 +11263,13 @@ header nav .menu-mobile .itens form button {
   background-color: #E2E2E2;
   outline: none;
   border: none;
+}
+header nav .menu-mobile .itens form input svg,
+header nav .menu-mobile .itens form button svg {
+  width: 1rem;
+}
+header nav .menu-mobile .itens form input {
+  width: 90%;
 }
 header nav .menu-mobile .itens a {
   padding-bottom: 0.5rem;
@@ -11729,6 +11739,44 @@ header .filtro .btn-wrapper button:hover {
   background-color: #E2E2E2;
   color: #005298;
 }
+header.pag-internas .logo {
+  z-index: 94;
+}
+header.pag-internas .logo .aedas-logo-mock,
+header.pag-internas .logo img {
+  display: none;
+}
+header.pag-internas .logo .circulo-branco {
+  display: block;
+  width: 12.5rem;
+  height: 12.5rem;
+  position: absolute;
+  top: -5rem;
+  left: -3rem;
+  background-color: #E2E2E2;
+  border-radius: 100%;
+}
+header.pag-internas .logo .texto {
+  position: absolute;
+  top: 1rem;
+  color: #272727;
+}
+header.pag-internas .logo .texto h2, header.pag-internas .logo .texto .h2 {
+  font-size: 1.2rem;
+}
+header.pag-internas .logo .texto p {
+  font-size: 0.8rem;
+}
+header.pag-internas nav::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: #005298;
+  z-index: 93;
+}
 
 /*
 =====================================================
@@ -11765,6 +11813,18 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
   header .municipio {
     padding: 3rem;
   }
+  header.pag-internas .texto {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    color: #272727;
+  }
+  header.pag-internas .texto h2, header.pag-internas .texto .h2 {
+    font-size: 1.8rem;
+  }
+  header.pag-internas .texto p {
+    font-size: 1.2rem;
+  }
 }
 /*
 =====================================================
@@ -11780,18 +11840,22 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
     display: none;
   }
   header nav .menu-desktop {
-    margin: 10px 10px;
     width: 100%;
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     z-index: 99;
+    margin: 10px 10px;
+    pointer-events: none;
   }
   header nav .menu-desktop .itens {
     display: flex;
     justify-content: end;
     list-style: none;
+  }
+  header nav .menu-desktop .itens li {
+    pointer-events: all;
   }
   header nav .menu-desktop .itens li.item {
     background-color: #E2E2E2;
@@ -11871,6 +11935,7 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
     background-color: #E2E2E2;
   }
   header nav .menu-desktop .itens li.li-form form button {
+    margin-right: 0.5rem;
     outline: none;
     border: none;
     background-color: #E2E2E2;
@@ -11939,6 +12004,76 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
   header .filtro p {
     font-size: 1.5rem;
   }
+  header.pag-internas .logo .circulo-branco {
+    position: fixed;
+    width: 15rem;
+    height: 15rem;
+    top: -6rem;
+    left: -3rem;
+  }
+  header.pag-internas .logo .texto {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+  }
+  header.pag-internas .logo .texto h2, header.pag-internas .logo .texto .h2 {
+    font-size: 1.5rem;
+  }
+  header.pag-internas .logo .texto p {
+    font-size: 1rem;
+  }
+  header.pag-internas nav .menu-desktop {
+    margin: 10px 0;
+  }
+  header.pag-internas nav .menu-desktop .itens li {
+    background-color: #B4ABA2;
+  }
+  header.pag-internas nav .menu-desktop .itens li.item a, header.pag-internas nav .menu-desktop .itens li.espacador a {
+    color: #272727;
+  }
+  header.pag-internas nav .menu-desktop .itens li.item a svg, header.pag-internas nav .menu-desktop .itens li.espacador a svg {
+    fill: #272727;
+  }
+  header.pag-internas nav .menu-desktop .itens li.item a .hamb-desktop span, header.pag-internas nav .menu-desktop .itens li.espacador a .hamb-desktop span {
+    background-color: #272727;
+  }
+  header.pag-internas nav .menu-desktop .itens li.item a:hover, header.pag-internas nav .menu-desktop .itens li.espacador a:hover {
+    background-color: #005298;
+    color: #E2E2E2;
+  }
+  header.pag-internas nav .menu-desktop .itens li.item a:hover svg, header.pag-internas nav .menu-desktop .itens li.espacador a:hover svg {
+    fill: #E2E2E2;
+  }
+  header.pag-internas nav .menu-desktop .itens li.item a:hover .hamb-desktop span, header.pag-internas nav .menu-desktop .itens li.espacador a:hover .hamb-desktop span {
+    background-color: #E2E2E2;
+  }
+  header.pag-internas nav .menu-desktop .itens li.li-form form,
+header.pag-internas nav .menu-desktop .itens li.li-form form input,
+header.pag-internas nav .menu-desktop .itens li.li-form form button {
+    background-color: #B4ABA2;
+    border-color: #272727;
+  }
+  header.pag-internas nav .menu-desktop .itens li.li-form form svg path,
+header.pag-internas nav .menu-desktop .itens li.li-form form svg rect,
+header.pag-internas nav .menu-desktop .itens li.li-form form input svg path,
+header.pag-internas nav .menu-desktop .itens li.li-form form input svg rect,
+header.pag-internas nav .menu-desktop .itens li.li-form form button svg path,
+header.pag-internas nav .menu-desktop .itens li.li-form form button svg rect {
+    fill: #272727;
+  }
+  header.pag-internas nav .menu-desktop .itens li.li-form:hover {
+    background-color: #B4ABA2;
+  }
+  header.pag-internas nav .menu-desktop .itens li .submenu li a {
+    color: #E2E2E2;
+  }
+  header.pag-internas nav .menu-desktop .itens li .submenu li a:hover {
+    background-color: #B4ABA2;
+    color: #272727;
+  }
+  header.pag-internas nav::before {
+    position: fixed;
+  }
 }
 /*
 =====================================================
@@ -11990,7 +12125,7 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
 */
 @media (min-width: 1400px) {
   header nav .menu-desktop .itens li.item a {
-    padding: 0 2rem;
+    padding: 1.2rem 2rem;
   }
   header nav .menu-desktop .itens li.item a p {
     font-size: 18px;
@@ -12075,8 +12210,8 @@ a div uma classe "sem-foto"
   display: flex;
   align-items: center;
 }
-.pin-card .pin-card-content .content-main ul li.content-li-item svg,
-.pin-card .pin-card-content .content-main ul li.content-li-item img {
+.pin-card .pin-card-content .content-main ul li.content-li-item svg {
+  fill: #272727;
   margin-right: 1rem;
   width: 1.5rem;
 }
@@ -12186,6 +12321,161 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
     margin-top: 6rem;
   }
 }
+footer {
+  padding: 10vw 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+footer p {
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0;
+}
+footer p.copyright {
+  font-size: 0.7rem;
+}
+footer .realizadores {
+  margin: 2rem 0;
+  text-align: center;
+  width: 80%;
+}
+footer .realizadores img {
+  height: 4rem;
+  mix-blend-mode: multiply;
+}
+
+/*
+=====================================================
+Medium devices (desktops, 768px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@media (min-width: 768px) {
+  footer .realizadores p {
+    text-align: left;
+  }
+}
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@media (min-width: 992px) {
+  footer {
+    padding: 5vw 10rem;
+  }
+}
+.contato-page,
+.sobre-page {
+  background-color: #E2E2E2;
+}
+.contato-page main .grafismos,
+.sobre-page main .grafismos {
+  position: absolute;
+  top: -3rem;
+  left: -5rem;
+  height: 20rem;
+  transform: rotate(90deg);
+  opacity: 0.5;
+}
+.contato-page .container,
+.sobre-page .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12rem 0px 0px 0px;
+}
+.contato-page .container .inicio,
+.sobre-page .container .inicio {
+  padding: 0vw 2rem 2rem 2rem;
+}
+.contato-page .container .inicio h1, .contato-page .container .inicio .h1,
+.sobre-page .container .inicio h1,
+.sobre-page .container .inicio .h1 {
+  width: 100%;
+  text-align: start;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+.contato-page .container .inicio h4, .contato-page .container .inicio .h4,
+.sobre-page .container .inicio h4,
+.sobre-page .container .inicio .h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+.contato-page .container .espacador,
+.sobre-page .container .espacador {
+  display: block;
+  width: 100%;
+  height: 3px;
+  margin: 1rem 0;
+  background-color: #272727;
+}
+.contato-page .padding-padrao,
+.sobre-page .padding-padrao {
+  padding: 2rem;
+}
+
+/*
+=====================================================
+Medium devices (desktops, 768px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@media (min-width: 768px) {
+  .contato-page,
+.sobre-page {
+    background-color: #E2E2E2;
+  }
+  .contato-page .container,
+.sobre-page .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12rem 30vw 0rem 0rem;
+  }
+}
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@media (min-width: 992px) {
+  .contato-page,
+.sobre-page {
+    background-color: #E2E2E2;
+  }
+  .contato-page .container,
+.sobre-page .container {
+    padding-left: 5rem;
+  }
+  .contato-page .container .inicio h1, .contato-page .container .inicio .h1,
+.sobre-page .container .inicio h1,
+.sobre-page .container .inicio .h1 {
+    font-size: 6rem;
+  }
+  .contato-page .container .inicio p,
+.sobre-page .container .inicio p {
+    font-size: 1.3rem;
+  }
+}
+/*
+=====================================================
+Extra Extra Large devices (desktops, 1400px and up)
+Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
+=====================================================
+*/
+@media (min-width: 1400px) {
+  .contato-page .container, .sobre-page .container {
+    max-width: unset;
+  }
+}
 .page-home {
   background-image: url("../../assets/images/home/fundo2.png");
   background-repeat: no-repeat;
@@ -12231,25 +12521,92 @@ Extra Extra Large devices (desktops, 1400px and up)
 Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
 =====================================================
 */
-.page-home {
-  background-image: url("../../assets/images/home/fundo2.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-  width: 100vw;
-  padding: 0px;
-  margin: 0px;
+.sobre-page .container {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
-.page-home #stack {
-  height: 100%;
-  background-color: transparent;
-  padding: 10px;
+.sobre-page .container .swiper {
+  margin: 0 2rem;
+  position: relative;
+  left: 0;
+  width: calc(100% - 4rem);
+  max-width: calc(100% - 4rem);
+  overflow: visible;
 }
-.page-home #stack #map {
-  width: 100%;
-  height: 100%;
+.sobre-page .container .swiper .swiper-wrapper {
+  max-width: 80vw;
+  padding: 1rem 0px 1rem 0rem;
+}
+.sobre-page .container .swiper .swiper-slide {
+  max-height: 60vh;
+  display: block;
+  position: relative;
   object-fit: cover;
-  z-index: 1;
+}
+.sobre-page .container .swiper .swiper-pagination {
+  position: relative;
+  margin-top: 2rem;
+}
+.sobre-page .container .swiper .swiper-pagination .swiper-pagination-bullet {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 2px solid #005298;
+  background-color: #E2E2E2;
+  opacity: 1;
+}
+.sobre-page .container .swiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #005298;
+}
+.sobre-page .container .swiper p {
+  margin-top: 0;
+}
+.sobre-page .container .swiper .espacador {
+  overflow: visible;
+  display: block;
+  width: 100vw;
+  height: 3px;
+}
+.sobre-page .container .video {
+  padding: 0 2rem;
+  width: 100%;
+  height: auto;
+}
+.sobre-page .container .video iframe {
+  display: block;
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+}
+.sobre-page .container .texto h5, .sobre-page .container .texto .h5 {
+  font-weight: bold;
+  text-align: left;
+}
+.sobre-page .container .box {
+  padding: 2rem;
+  padding-bottom: calc(2rem + 10px);
+  border-bottom: 3px solid;
+  border-top: 3px solid;
+  border-color: #272727;
+  text-align: center;
+  font-weight: bold;
+}
+.sobre-page .container .box p.info {
+  text-align: left;
+  font-size: 1.7rem;
+  padding: 0 10%;
+}
+.sobre-page .container .box a {
+  text-decoration: none;
+  color: #005298;
+  padding: 0.5rem 1rem;
+  border: 2px solid #005298;
+  border-radius: 3rem;
+  transition: 0.3s ease-in-out;
+}
+.sobre-page .container .box a:hover {
+  background-color: #005298;
+  color: #E2E2E2;
 }
 
 /*
@@ -12258,23 +12615,161 @@ Medium devices (desktops, 768px and up)
 Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
 =====================================================
 */
+@media (min-width: 768px) {
+  .sobre-page .container .swiper {
+    overflow: hidden;
+  }
+  .sobre-page .container .swiper .swiper-wrapper {
+    max-width: 60vw;
+  }
+  .sobre-page .container .video iframe {
+    height: 20rem;
+  }
+  .sobre-page .container .box {
+    margin-left: 0rem;
+    width: calc(100% - 4rem);
+  }
+}
 /*
 =====================================================
 Large devices (desktops, 992px and up)
 Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
 =====================================================
 */
+@media (min-width: 992px) {
+  .sobre-page .container .swiper p {
+    font-size: 1.3rem;
+  }
+  .sobre-page .container .video iframe {
+    height: 25rem;
+  }
+  .sobre-page .container .texto h5, .sobre-page .container .texto .h5 {
+    font-size: 1.5rem;
+  }
+  .sobre-page .container .texto p {
+    font-size: 1.3rem;
+  }
+  .sobre-page .container .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .sobre-page .container .box p.info {
+    margin-bottom: 1rem;
+    width: 70%;
+  }
+}
+.contato-page main .box {
+  background-image: url("../images/outros/grafismos.png");
+  background-size: 100%;
+  background-position: 60vw -35vw;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 2rem 2rem;
+}
+.contato-page main .box p.info {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: bold;
+}
+.contato-page main .box p.email {
+  color: #005298;
+}
+.contato-page main .box p.email span {
+  font-weight: bold;
+  border-bottom: 2px solid #005298;
+}
+.contato-page main .perguntas {
+  width: 100%;
+  height: fit-content;
+  padding: 2rem 2rem 2rem 2rem;
+}
+.contato-page main .perguntas h3, .contato-page main .perguntas .h3 {
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+.contato-page main .perguntas .pergunta-box {
+  margin-bottom: 3rem;
+  position: relative;
+}
+.contato-page main .perguntas .pergunta-box .pergunta {
+  cursor: pointer;
+  position: relative;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.contato-page main .perguntas .pergunta-box .pergunta img {
+  width: 1rem;
+  transition: 0.3s ease-in-out transform;
+  transform-origin: top;
+}
+.contato-page main .perguntas .pergunta-box .pergunta p {
+  margin: 0;
+}
+.contato-page main .perguntas .pergunta-box .pergunta .divisor {
+  position: absolute;
+  bottom: -0.5rem;
+  width: 100%;
+  height: 2px;
+  background-color: #005298;
+}
+.contato-page main .perguntas .pergunta-box .resposta {
+  position: absolute;
+  display: block;
+  transition: 0.3s ease-in-out;
+  transform-origin: top;
+  transform: scaleY(0);
+  opacity: 0;
+}
+.contato-page main .perguntas .pergunta-box.active .pergunta img {
+  transform: rotate(180deg);
+}
+.contato-page main .perguntas .pergunta-box.active .resposta {
+  position: relative;
+  transform: scaleY(1);
+  opacity: 1;
+}
+.contato-page main .perguntas .pergunta-box:last-child {
+  margin-bottom: 0;
+}
+
 /*
 =====================================================
-Extra Large devices (desktops, 1200px and up)
+Medium devices (desktops, 768px and up)
 Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
 =====================================================
 */
+@media (min-width: 768px) {
+  .contato-page main .box p.info {
+    font-size: 2rem;
+  }
+  .contato-page main .box p.email {
+    font-size: 1.3rem;
+  }
+  .contato-page main .perguntas h3, .contato-page main .perguntas .h3 {
+    font-size: 2rem;
+  }
+  .contato-page main .perguntas .pergunta-box {
+    font-size: 1.3rem;
+  }
+}
 /*
 =====================================================
-Extra Extra Large devices (desktops, 1400px and up)
+Large devices (desktops, 992px and up)
 Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
 =====================================================
 */
+@media (min-width: 992px) {
+  .contato-page main .grafismos {
+    height: 25rem;
+    transform: rotate(100deg);
+    left: -6rem;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
