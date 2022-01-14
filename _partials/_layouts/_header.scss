@@ -146,7 +146,7 @@ header {
           width: 80%;
           margin-bottom: 1rem;
 
-          img {
+          img, svg{
             height: auto;
             width: 1rem;
             margin-right: 0.5rem;
@@ -788,10 +788,12 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
                   width: 1.5rem;
                   height: 2rem;
                   margin: 0 0.7rem;
-                }
-                img {
-                  height: 0.5rem;
-                  width: auto;
+                  &.seta{
+                    height: 0.5rem;
+                    width: auto;
+                    margin: auto 0;
+                    transition: 0.2s ease-in-out;
+                  }
                 }
                 p {
                   margin: 0px;
@@ -876,6 +878,12 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
                 }
                 svg {
                   fill: $color-white;
+                  &.seta{
+                    transform: rotate(180deg);
+                    path{
+                      stroke: $color-white;
+                    }
+                  }
                 }
               }
             }
@@ -963,6 +971,11 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
                   color: $color-black;
                   svg {
                     fill: $color-black;
+                    &.seta{
+                      path{
+                        stroke: $color-black;
+                      }
+                    }
                   }
                   .hamb-desktop {
                     span {
@@ -974,6 +987,11 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
                     color: $color-white;
                     svg {
                       fill: $color-white;
+                      &.seta{
+                        path{
+                          stroke: $color-white;
+                        }
+                      }
                     }
                     .hamb-desktop {
                       span {

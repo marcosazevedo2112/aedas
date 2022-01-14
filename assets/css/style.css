@@ -11141,6 +11141,13 @@ body {
   display: none;
 }
 
+a {
+  text-decoration: none;
+  color: unset;
+  margin: 0;
+  padding: 0;
+}
+
 header {
   position: absolute;
   display: flex;
@@ -11279,7 +11286,7 @@ header nav .menu-mobile .itens a {
   width: 80%;
   margin-bottom: 1rem;
 }
-header nav .menu-mobile .itens a img {
+header nav .menu-mobile .itens a img, header nav .menu-mobile .itens a svg {
   height: auto;
   width: 1rem;
   margin-right: 0.5rem;
@@ -11878,9 +11885,11 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
     height: 2rem;
     margin: 0 0.7rem;
   }
-  header nav .menu-desktop .itens li.item a img {
+  header nav .menu-desktop .itens li.item a svg.seta {
     height: 0.5rem;
     width: auto;
+    margin: auto 0;
+    transition: 0.2s ease-in-out;
   }
   header nav .menu-desktop .itens li.item a p {
     margin: 0px;
@@ -11960,6 +11969,12 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
   header nav .menu-desktop .itens li:hover a svg {
     fill: #E2E2E2;
   }
+  header nav .menu-desktop .itens li:hover a svg.seta {
+    transform: rotate(180deg);
+  }
+  header nav .menu-desktop .itens li:hover a svg.seta path {
+    stroke: #E2E2E2;
+  }
   header nav .menu-desktop .itens li .submenu {
     display: none;
     position: absolute;
@@ -12034,6 +12049,9 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
   header.pag-internas nav .menu-desktop .itens li.item a svg, header.pag-internas nav .menu-desktop .itens li.espacador a svg {
     fill: #272727;
   }
+  header.pag-internas nav .menu-desktop .itens li.item a svg.seta path, header.pag-internas nav .menu-desktop .itens li.espacador a svg.seta path {
+    stroke: #272727;
+  }
   header.pag-internas nav .menu-desktop .itens li.item a .hamb-desktop span, header.pag-internas nav .menu-desktop .itens li.espacador a .hamb-desktop span {
     background-color: #272727;
   }
@@ -12043,6 +12061,9 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
   }
   header.pag-internas nav .menu-desktop .itens li.item a:hover svg, header.pag-internas nav .menu-desktop .itens li.espacador a:hover svg {
     fill: #E2E2E2;
+  }
+  header.pag-internas nav .menu-desktop .itens li.item a:hover svg.seta path, header.pag-internas nav .menu-desktop .itens li.espacador a:hover svg.seta path {
+    stroke: #E2E2E2;
   }
   header.pag-internas nav .menu-desktop .itens li.item a:hover .hamb-desktop span, header.pag-internas nav .menu-desktop .itens li.espacador a:hover .hamb-desktop span {
     background-color: #E2E2E2;
