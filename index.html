@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -14,11 +16,13 @@
         <img id="map" src="assets/images/home/mapa-mock.png" alt="" srcset="">
         <header>
             <a href="/" class="logo">
-                <div class="aedas-logo-mock"></div>
+                <div class="aedas-logo">
+                    <img src="assets/images/outros/aedas-logo.png" alt="">
+                </div>
                 <img src="assets/images/home/circulo-azul.png" alt="" srcset="">
                 <div class="texto">
-                    <h2>RIO<br> PARAOPEBA:</h2>
-                    <p>cartografia de danos</p>
+                    <h2>LOCALIZE</h2>
+                    <p>mapa dos danos ao <strong>turismo</strong>,<br><strong> cultura</strong>, <strong>esporte</strong> e <strong>lazer</strong> na <br>Região 2 do vale do Rio Paraopeba</p>
                 </div>
             </a>
             <nav>
@@ -33,6 +37,7 @@
                     <div class="itens">
                         <div class="form-wrapper">
                             <form action="" method="get">
+                                <input type="text" name="search" id="search" placeholder="Insira aqui...">
                                 <button class="fa fa-search" type="submit">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="25.344" height="24.909"
                                         viewBox="0 0 25.344 24.909">
@@ -44,7 +49,6 @@
                                             fill="#005298" />
                                     </svg>
                                 </button>
-                                <input type="text" name="search" id="search" placeholder="Insira aqui...">
                             </form>
                         </div>
                         <a class="act-municipio" href="#">
@@ -84,6 +88,7 @@
                     <ul class="itens">
                         <li class="item li-form">
                             <form action="">
+                                <input type="text" name="search" id="search" placeholder="Insira aqui...">
                                 <button type="submit">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="25.344" height="24.909"
                                         viewBox="0 0 25.344 24.909">
@@ -95,7 +100,6 @@
                                             fill="#005298" />
                                     </svg>
                                 </button>
-                                <input type="text" name="search" id="search" placeholder="Insira aqui...">
                             </form>
                         </li>
                         <li class="item menu-item">
@@ -188,17 +192,19 @@
                 </div>
             </nav>
             <div class="severidade item-lateral">
-                <div class="severidade-close act-severidade">
-                    <div class="severidade-close-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14.826" height="15.926"
-                            viewBox="0 0 14.826 15.926">
-                            <g transform="translate(-385.087 -9.087)">
-                                <line x2="12" y2="13.1" transform="translate(386.5 10.5)" fill="none" stroke="#272727"
-                                    stroke-linecap="round" stroke-width="2" />
-                                <line y1="13.1" x2="12" transform="translate(386.5 10.5)" fill="none" stroke="#272727"
-                                    stroke-linecap="round" stroke-width="2" />
-                            </g>
-                        </svg>
+                <div class="close-wrapper">
+                    <div class="close severidade-close act-severidade">
+                        <div class="severidade-close-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14.826" height="15.926"
+                                viewBox="0 0 14.826 15.926">
+                                <g transform="translate(-385.087 -9.087)">
+                                    <line x2="12" y2="13.1" transform="translate(386.5 10.5)" fill="none" stroke="#272727"
+                                        stroke-linecap="round" stroke-width="2" />
+                                    <line y1="13.1" x2="12" transform="translate(386.5 10.5)" fill="none" stroke="#272727"
+                                        stroke-linecap="round" stroke-width="2" />
+                                </g>
+                            </svg>
+                        </div>
                     </div>
                 </div>
                 <p>Selecione o grau de severidade
@@ -233,17 +239,19 @@
                 <img src="assets/images/outros/grafismos.png" class="grafismos" alt="" srcset="">
             </div>
             <div class="municipio item-lateral">
-                <div class="municipio-close act-municipio">
-                    <div class="municipio-close-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14.826" height="15.926"
-                            viewBox="0 0 14.826 15.926">
-                            <g transform="translate(-385.087 -9.087)">
-                                <line x2="12" y2="13.1" transform="translate(386.5 10.5)" fill="none" stroke="#272727"
-                                    stroke-linecap="round" stroke-width="2" />
-                                <line y1="13.1" x2="12" transform="translate(386.5 10.5)" fill="none" stroke="#272727"
-                                    stroke-linecap="round" stroke-width="2" />
-                            </g>
-                        </svg>
+                <div class="close-wrapper">
+                    <div class="close municipio-close act-municipio">
+                        <div class="municipio-close-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14.826" height="15.926"
+                                viewBox="0 0 14.826 15.926">
+                                <g transform="translate(-385.087 -9.087)">
+                                    <line x2="12" y2="13.1" transform="translate(386.5 10.5)" fill="none" stroke="#272727"
+                                        stroke-linecap="round" stroke-width="2" />
+                                    <line y1="13.1" x2="12" transform="translate(386.5 10.5)" fill="none" stroke="#272727"
+                                        stroke-linecap="round" stroke-width="2" />
+                                </g>
+                            </svg>
+                        </div>
                     </div>
                 </div>
                 <p>
@@ -302,17 +310,19 @@
                 </button>
             </div>
             <div class="filtro item-lateral">
-                <div class="filtro-close act-filtro">
-                    <div class="filtro-close-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14.826" height="15.926"
-                            viewBox="0 0 14.826 15.926">
-                            <g transform="translate(-385.087 -9.087)">
-                                <line x2="12" y2="13.1" transform="translate(386.5 10.5)" fill="none" stroke="#272727"
-                                    stroke-linecap="round" stroke-width="2" />
-                                <line y1="13.1" x2="12" transform="translate(386.5 10.5)" fill="none" stroke="#272727"
-                                    stroke-linecap="round" stroke-width="2" />
-                            </g>
-                        </svg>
+                <div class="close-wrapper">
+                    <div class="close filtro-close act-filtro">
+                        <div class="filtro-close-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14.826" height="15.926"
+                                viewBox="0 0 14.826 15.926">
+                                <g transform="translate(-385.087 -9.087)">
+                                    <line x2="12" y2="13.1" transform="translate(386.5 10.5)" fill="none" stroke="#272727"
+                                        stroke-linecap="round" stroke-width="2" />
+                                    <line y1="13.1" x2="12" transform="translate(386.5 10.5)" fill="none" stroke="#272727"
+                                        stroke-linecap="round" stroke-width="2" />
+                                </g>
+                            </svg>
+                        </div>
                     </div>
                 </div>
                 <p>
@@ -408,7 +418,14 @@
         <div class="pin-card esportes">
             <img class="pin-card-close" src="assets/images/outros/fechar-icon.png" alt="" srcset="">
             <div class="pin-card-top">
-                <img src="https://www.astrosonho.com/wp-content/uploads/2020/07/iskele_3049997_1280.jpg" alt="">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <img class="swiper-slide" src="https://www.astrosonho.com/wp-content/uploads/2020/07/iskele_3049997_1280.jpg" alt="">
+                        <img class="swiper-slide" src="https://www.astrosonho.com/wp-content/uploads/2020/07/iskele_3049997_1280.jpg" alt="">
+                        <img class="swiper-slide" src="https://www.astrosonho.com/wp-content/uploads/2020/07/iskele_3049997_1280.jpg" alt="">
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
             </div>
             <div class="pin-card-content">
                 <div class="content-header">
@@ -500,8 +517,10 @@
             </div>
         </div>
     </div>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="assets/js/header.js"></script>
     <script src="assets/js/pin.js"></script>
+    <script src="assets/js/home.js"></script>
 </body>
 
 </html>

@@ -4,11 +4,13 @@
 
 function swiperInit() {
   const swiper = new Swiper('.swiper', {
-    spaceBetween: 10,
-    // If we need pagination
-    /*pagination: {
+    spaceBetween: 0,
+    autoplay: {
+      delay: 3000,
+    },
+    pagination: {
       el: '.swiper-pagination',
       clickable: true,
-    },*/
+    },
   });
 }

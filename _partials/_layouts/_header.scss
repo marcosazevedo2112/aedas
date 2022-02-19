@@ -33,21 +33,34 @@ header {
         padding: 0;
       }
       p {
-        font-size: 0.9rem;
+        width: 10rem;
+        font-size: 0.8rem;
+        line-height: 1;
         margin: 0;
         padding: 0;
       }
     }
 
-    .aedas-logo-mock {
+    .aedas-logo {
       position: relative;
+      width: 3rem;
+      height: 3rem;
       top: 5.8rem;
       left: 10px;
       z-index: 91;
-      padding: 1.7rem;
       background-color: $color-white;
+      padding: 1rem;
       border-radius: 100%;
-      width: fit-content;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        object-fit: contain;
+        height: 2rem;
+        width: 2rem;
+        display: block;
+        position: static;
+      }
     }
 
     .circulo-branco {
@@ -116,6 +129,7 @@ header {
         display: flex;
         flex-direction: column;
         form {
+          justify-content: space-between;
           display: flex;
           flex-direction: row;
           padding: 1rem 0.5rem;
@@ -127,7 +141,9 @@ header {
           button {
             svg {
               width: 1rem;
+              transform: scaleX(-1);
             }
+            margin: 0 1rem;
             background-color: $color-white;
             outline: none;
             border: none;
@@ -146,7 +162,8 @@ header {
           width: 80%;
           margin-bottom: 1rem;
 
-          img, svg{
+          img,
+          svg {
             height: auto;
             width: 1rem;
             margin-right: 0.5rem;
@@ -173,44 +190,98 @@ header {
       display: none;
     }
   }
-  .severidade {
+  .item-lateral {
     position: fixed;
     top: 0;
     left: 100%;
     z-index: 99;
     height: 100vh;
     width: 100vw;
-    background-color: $color-gray;
-    padding: 2rem;
-    transition: 0.5s ease-in-out transform;
-    .severidade-close {
-      cursor: pointer;
-      position: sticky;
-      top: 0;
-      float: right;
-      padding: 0.5rem;
-      background-color: $color-gray;
-      border-radius: 100%;
-      transition: 0.3s ease-in-out background-color;
-      svg {
-        height: 1.5rem;
-        width: 1.5rem;
-        transform: scale(0.5);
-      }
-      &:hover {
-        background-color: $color-black;
-        svg line {
-          stroke: $color-gray;
+    .close-wrapper {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      .close {
+        cursor: pointer;
+        position: sticky;
+        top: 0px;
+        float: right;
+        padding: 0.5rem;
+        border-radius: 100%;
+        transition: 0.3s ease-in-out background-color;
+        svg {
+          height: 1.5rem;
+          width: 1.5rem;
+          transform: scale(0.5);
+        }
+        &.severidade-close {
+          background-color: $color-gray;
+          &:hover {
+            background-color: $color-black;
+            svg line {
+              stroke: $color-gray;
+            }
+          }
+        }
+        &.municipio-close {
+          background-color: $color-gray;
+          &:hover {
+            background-color: $color-black;
+            svg line {
+              stroke: $color-gray;
+            }
+          }
+        }
+        &.filtro-close {
+          background-color: $color-primary;
+          svg {
+            line {
+              stroke: $color-white;
+            }
+          }
+          &:hover {
+            background-color: $color-white;
+            svg line {
+              stroke: $color-primary;
+            }
+          }
         }
       }
     }
     p {
+      margin-top: 3rem;
       clear: right;
       color: $color-black;
-
+      font-size: 1.5rem;
       font-weight: bold;
       width: 100%;
     }
+    button {
+      display: block;
+      margin: 3rem auto;
+      padding: 0.2rem 1rem;
+      width: fit-content;
+
+      background-color: transparent;
+      border: 2px solid $color-black;
+      outline: none;
+      border-radius: 4rem;
+      font-size: 1.2rem;
+      transition: 0.3s ease-in-out background-color;
+
+      &:hover {
+        background-color: $color-black;
+        color: $color-white;
+      }
+    }
+    &.active {
+      transform: translateX(-100%);
+    }
+  }
+  .severidade {
+    background-color: $color-gray;
+    padding: 2rem;
+    transition: 0.5s ease-in-out transform;
     div.opcoes {
       z-index: 93;
       width: 100%;
@@ -246,28 +317,6 @@ header {
         width: 100%;
         height: 2px;
         background-color: $color-black;
-      }
-    }
-
-    &.active {
-      transform: translateX(-100%);
-    }
-    button {
-      display: block;
-      margin: 3rem auto;
-      padding: 0.2rem 1rem;
-      width: fit-content;
-
-      background-color: transparent;
-      border: 2px solid $color-black;
-      outline: none;
-      border-radius: 4rem;
-      font-size: 1.2rem;
-      transition: 0.3s ease-in-out background-color;
-
-      &:hover {
-        background-color: $color-black;
-        color: $color-white;
       }
     }
     img.grafismos {
@@ -282,45 +331,11 @@ header {
     }
   }
   .municipio {
-    position: fixed;
-    top: 0;
-    left: 100%;
-    z-index: 99;
-    height: 100vh;
-    width: 100vw;
     background-color: $color-gray;
     padding: 2rem;
     transition: 0.5s ease-in-out transform;
     overflow-y: scroll;
     overflow-x: hidden;
-    .municipio-close {
-      cursor: pointer;
-      position: sticky;
-      top: 0;
-      float: right;
-      padding: 0.5rem;
-      background-color: $color-gray;
-      border-radius: 100%;
-      transition: 0.3s ease-in-out background-color;
-      svg {
-        height: 1.5rem;
-        width: 1.5rem;
-        transform: scale(0.5);
-      }
-      &:hover {
-        background-color: $color-black;
-        svg line {
-          stroke: $color-gray;
-        }
-      }
-    }
-    p {
-      clear: right;
-      color: $color-black;
-
-      font-weight: bold;
-      width: 100%;
-    }
     div.opcoes {
       z-index: 93;
       width: 100%;
@@ -358,29 +373,6 @@ header {
         background-color: $color-black;
       }
     }
-
-    &.active {
-      transform: translateX(-100%);
-    }
-    button {
-      display: block;
-      margin: 3rem auto;
-      padding: 0.2rem 1rem;
-      width: fit-content;
-
-      background-color: transparent;
-      border: 2px solid $color-black;
-      outline: none;
-      border-radius: 4rem;
-      font-size: 1.2rem;
-      transition: 0.3s ease-in-out background-color;
-
-      &:hover {
-        background-color: $color-black;
-        color: $color-white;
-      }
-    }
-
     .municipio-seleciona-todos {
       width: fit-content;
       margin-left: auto;
@@ -451,12 +443,6 @@ header {
     }
   }
   .filtro {
-    position: fixed;
-    top: 0;
-    left: 100%;
-    z-index: 99;
-    height: 100vh;
-    width: 100vw;
     background-color: $color-primary;
     color: $color-white;
     padding: 2rem 2rem 0 2rem;
@@ -519,38 +505,8 @@ header {
         }
       }
     }
-
-    .filtro-close {
-      cursor: pointer;
-      position: sticky;
-      top: 0;
-      float: right;
-      padding: 0.5rem;
-      background-color: $color-primary;
-      border-radius: 100%;
-      transition: 0.3s ease-in-out background-color;
-      svg {
-        height: 1.5rem;
-        width: 1.5rem;
-        transform: scale(0.5);
-        line {
-          stroke: $color-white;
-        }
-      }
-      &:hover {
-        background-color: $color-white;
-        svg line {
-          stroke: $color-primary;
-        }
-      }
-    }
-
     p {
-      clear: right;
       color: $color-white;
-      font-size: 1.5rem;
-      font-weight: bold;
-      width: 100%;
     }
 
     .op-wrapper {
@@ -607,11 +563,6 @@ header {
         }
       }
     }
-
-    &.active {
-      transform: translateX(-100%);
-    }
-
     .btn-wrapper {
       position: -webkit-sticky;
       position: sticky;
@@ -666,7 +617,8 @@ header {
           font-size: 1.2rem;
         }
         p {
-          font-size: 0.8rem;
+          width: 8rem;
+          font-size: 0.7rem;
         }
       }
     }
@@ -703,12 +655,18 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
           font-size: 1.8rem;
         }
         p {
-          font-size: 1.2rem;
+          width: 11rem;
+          font-size: 1rem;
         }
       }
-      .aedas-logo-mock {
+      .aedas-logo {
         top: 9rem;
-        padding: 2rem;
+        height: 4rem;
+        width: 4rem;
+        img {
+          height: 2.5rem;
+          width: 2.5rem;
+        }
       }
     }
     .severidade {
@@ -762,7 +720,7 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
         top: 0;
         right: 0;
         z-index: 99;
-        margin: 10px 10px;
+        margin: 20px 20px 0 0;
         pointer-events: none;
         .itens {
           display: flex;
@@ -788,7 +746,7 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
                   width: 1.5rem;
                   height: 2rem;
                   margin: 0 0.7rem;
-                  &.seta{
+                  &.seta {
                     height: 0.5rem;
                     width: auto;
                     margin: auto 0;
@@ -850,11 +808,13 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
                   background-color: $color-white;
                 }
                 button {
-                  margin-right: 0.5rem;
                   outline: none;
                   border: none;
                   background-color: $color-white;
                   padding: 0;
+                  svg {
+                    transform: scaleX(-1);
+                  }
                 }
               }
               &:hover {
@@ -878,9 +838,9 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
                 }
                 svg {
                   fill: $color-white;
-                  &.seta{
+                  &.seta {
                     transform: rotate(180deg);
-                    path{
+                    path {
                       stroke: $color-white;
                     }
                   }
@@ -918,29 +878,20 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
         }
       }
     }
-    .severidade {
+    .item-lateral{
       width: 40%;
-      p {
+      p{
         font-size: 1.5rem;
       }
-    }
-    .municipio {
-      width: 40%;
-      min-height: 100vh;
-      p {
-        font-size: 1.5rem;
+      &.filtro{
+        p {
+          margin-bottom: 3rem;
+        }
       }
     }
-    .filtro {
-      width: 40%;
-      p {
-        font-size: 1.5rem;
-      }
-    }
-
     &.pag-internas {
-      .logo{
-        .circulo-branco{
+      .logo {
+        .circulo-branco {
           position: fixed;
           width: 15rem;
           height: 15rem;
@@ -955,7 +906,7 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
             font-size: 1.5rem;
           }
           p {
-            font-size: 1rem;
+            font-size: 0.9rem;
           }
         }
       }
@@ -971,8 +922,8 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
                   color: $color-black;
                   svg {
                     fill: $color-black;
-                    &.seta{
-                      path{
+                    &.seta {
+                      path {
                         stroke: $color-black;
                       }
                     }
@@ -987,8 +938,8 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
                     color: $color-white;
                     svg {
                       fill: $color-white;
-                      &.seta{
-                        path{
+                      &.seta {
+                        path {
                           stroke: $color-white;
                         }
                       }
@@ -1012,7 +963,7 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
                     fill: $color-black;
                   }
                 }
-                &:hover{
+                &:hover {
                   background-color: $color-gray;
                 }
               }
@@ -1028,7 +979,7 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
             }
           }
         }
-        &::before{
+        &::before {
           position: fixed;
         }
       }
@@ -1047,22 +998,27 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
     .logo {
       img {
         height: 30rem;
-        top: -12.5rem;
+        top: -15rem;
         left: -6rem;
       }
       .texto {
-        top: -3.5rem;
+        top: -2.5rem;
         h2 {
-          font-size: 3rem;
+          font-size: 2.5rem;
         }
         p {
-          font-size: 1.5rem;
+          width: auto;
+          font-size: 1rem;
         }
       }
-      .aedas-logo-mock {
-        top: 12rem;
+      .aedas-logo {
+        top: 10rem;
         left: 0.2rem;
         padding: 3rem;
+        img {
+          width: 4rem;
+          height: 4rem;
+        }
       }
     }
     nav {

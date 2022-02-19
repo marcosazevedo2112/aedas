@@ -13,27 +13,53 @@ a div uma classe "sem-foto"
   width: 90vw;
   height: 100vh;
   background-color: $color-orange;
-  color: $color-black;
+  color: $color-white;
   transition: 0.5s ease-in-out transform;
   overflow-y: scroll;
 
   .pin-card-close {
+    z-index: 99;
     position: sticky;
     top: 1rem;
     right: 1rem;
     float: right;
     padding: 0.5rem;
     border-radius: 100%;
-    background-color: $color-orange;
+    background-color: $color-white;
     cursor: pointer;
   }
 
   .pin-card-top {
-    img {
+    height: min-content;
+    > img {
       margin-top: -4rem;
       width: 100%;
       height: 50vw;
       object-fit: cover;
+      margin-bottom: 30px;
+    }
+    > .swiper {
+      width: 100%;
+      z-index: 90;
+      position: relative;
+      top: -2rem;
+      .swiper-wrapper {
+        width: 100%;
+        height: 100%;
+      }
+      .swiper-pagination {
+        .swiper-pagination-bullet {
+          width: 0.5rem;
+          height: 0.5rem;
+          margin: 0 0.5rem;
+          border-radius: 50%;
+          background-color: $color-white;
+          opacity: 1;
+          &.swiper-pagination-bullet-active {
+            background-color: $color-orange;
+          }
+        }
+      }
     }
   }
 
@@ -43,16 +69,17 @@ a div uma classe "sem-foto"
     padding-left: 2rem;
     .content-header {
       position: relative;
-      top: -1rem;
       display: flex;
       align-items: center;
+      margin-bottom: 20px;
       img {
-        height: 5rem;
+        height: auto;
+        width: 60px;
         margin-right: 0.5rem;
       }
       h4 {
         font-weight: 600;
-        color: $color-black;
+        color: $color-white;
       }
     }
     .content-main {
@@ -68,10 +95,15 @@ a div uma classe "sem-foto"
           &.content-li-item {
             display: flex;
             align-items: center;
-            svg{
-              fill: $color-black;
+            svg {
+              fill: $color-white;
               margin-right: 1rem;
               width: 1.5rem;
+              g,
+              g path,
+              path {
+                fill: $color-white;
+              }
             }
             p {
               margin: 0;
@@ -82,7 +114,7 @@ a div uma classe "sem-foto"
             margin: 0.5rem 0;
             height: 3px;
             width: 100%;
-            background-color: $color-black;
+            background-color: $color-white;
           }
         }
       }
@@ -100,6 +132,10 @@ a div uma classe "sem-foto"
   &.sem-foto {
     .pin-card-content {
       .content-header {
+        margin-top: 20px;
+        align-items: center;
+      }
+      .content-header:first-child {
         margin-top: 4rem;
         align-items: center;
       }
@@ -108,6 +144,13 @@ a div uma classe "sem-foto"
 
   &.turismo {
     background-color: $color-sky-blue;
+    .pin-card-top .swiper .swiper-pagination {
+      .swiper-pagination-bullet {
+        &.swiper-pagination-bullet-active {
+          background-color: $color-sky-blue;
+        }
+      }
+    }
     .pin-card-close {
       background-color: $color-sky-blue;
     }
@@ -118,12 +161,26 @@ a div uma classe "sem-foto"
     .pin-card-close {
       background-color: $color-green;
     }
+    .pin-card-top .swiper .swiper-pagination {
+      .swiper-pagination-bullet {
+        &.swiper-pagination-bullet-active {
+          background-color: $color-green;
+        }
+      }
+    }
   }
 
   &.localidades {
     background-color: $color-yellow;
     .pin-card-close {
       background-color: $color-yellow;
+    }
+    .pin-card-top .swiper .swiper-pagination {
+      .swiper-pagination-bullet {
+        &.swiper-pagination-bullet-active {
+          background-color: $color-yellow;
+        }
+      }
     }
   }
 
@@ -132,12 +189,26 @@ a div uma classe "sem-foto"
     .pin-card-close {
       background-color: $color-pink;
     }
+    .pin-card-top .swiper .swiper-pagination {
+      .swiper-pagination-bullet {
+        &.swiper-pagination-bullet-active {
+          background-color: $color-pink;
+        }
+      }
+    }
   }
 
   &.esportes {
     background-color: $color-orange;
     .pin-card-close {
       background-color: $color-orange;
+    }
+    .pin-card-top .swiper .swiper-pagination {
+      .swiper-pagination-bullet {
+        &.swiper-pagination-bullet-active {
+          background-color: $color-orange;
+        }
+      }
     }
   }
 }
@@ -154,18 +225,25 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
     .pin-card-close {
       padding: 1rem;
     }
-
     .pin-card-top {
-      img {
+      > img {
         height: 30vw;
       }
+      .swiper {
+        height: 30vw;
+        top: -4rem;
+        .swiper-wrapper {
+          .swiper-slide {
+            height: 30vw;
+            width: 100%;
+            object-fit: cover;
+            object-position: center center;
+          }
+        }
+      }
     }
-
     .pin-card-content {
       .content-header {
-        img {
-          height: 5rem;
-        }
         h4 {
           font-size: 2rem;
         }
@@ -191,25 +269,23 @@ Read more: https://getbootstrap.com/docs/5.0/layout/breakpoints/
         height: 30vw;
       }
     }
-
     .pin-card-content {
       padding-left: 0;
       width: 90%;
       margin: 0 auto;
       .content-header {
-        img {
-          height: 5rem;
-        }
         h4 {
-          font-size: 2rem;
+          font-size: 1.3rem;
         }
       }
     }
-
     &.sem-foto {
       .pin-card-content {
         .content-header {
-          margin-top: 6rem;
+          margin-top: 20px;
+          &:first-child {
+            margin-top: 6rem;
+          }
         }
       }
     }
